@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { usePermissions } from '../usePermissions';
+import { computed } from 'vue'
+import { usePermissions } from '../usePermissions'
 
 const props = defineProps<{
   value: any  
 }>()
 
-const isRender = usePermissions(props.value)
+const isRender = computed(() => {
+  return usePermissions(props.value)
+})
 </script>
 
 <template>

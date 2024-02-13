@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia' 
+import { AccessEnum } from '../type/access'
 
 const PermissionsMap = {
-  ADMIN: ['admin:add', 'admin:remove'],
-  USER: ['user:add']
+  ADMIN: AccessEnum.ADMIN,
+  USER: AccessEnum.USER,
 }
 
 export const usePermissionsStore = defineStore('permissionsStore', {
